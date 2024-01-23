@@ -1,0 +1,76 @@
+<div class="container-page">
+  <div class="container-pokemon">
+    <!-- <div class="container-searchBar">
+      <label for="searchBar">Chercher un Pokémon</label>
+      <input
+        class="searchBar"
+        #searchBar
+        (keyup.enter)="selectPokemon(searchBar.value)"
+        type="number"
+        name="searchBar"
+      />
+
+      <p *ngIf="pokemonSelected">
+        Vous avez séléctionné: {{ pokemonSelected?.name }}
+      </p>
+
+      <p *ngIf="!pokemonSelected && errorPokemonSelected">
+        Le pokémon {{ searchBar.value }} n'exsite pas dans la liste
+      </p>
+    </div> -->
+
+    <app-search-pokemon></app-search-pokemon>
+
+    <div class="container-list">
+      <div class="col s12 m6" *ngFor="let pokemon of pokemonList">
+        <div class="card" (click)="goToPokemon(pokemon)" pokemonBorderCard>
+          <div class="card-image">
+            <img src="{{ pokemon.picture }}" id="{{ pokemon.id }}" />
+
+            <!-- <a
+              class="btn-floating halfway-fab waves-effect waves-light pink darken-2"
+            >
+              <i class="material-icons">add</i>
+            </a> -->
+          </div>
+          <div class="card-title">{{ pokemon.name }}</div>
+          <div class="card-type">
+            <span
+              *ngFor="let type of pokemon.types"
+              class="{{ type | pokemonTypeColor }}"
+            >
+              {{ type }}
+            </span>
+          </div>
+
+          <div class="card-date">
+            <p>Date de création :</p>
+            <p>{{ newDateFormat }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!pokemonList" class="progress">
+    <div class="indeterminate"></div>
+  </div>
+</div>
+
+<!-- <div class="conteiner-add-pokemon">
+  <a
+    class="btn btn-add-pokemon"
+    style="position: fixed; bottom: 25px; right: 25px"
+    routerLink="/pokemon/add"
+    >Ajouter un pokémon</a
+  >
+</div> -->
+
+<a
+  class="btn-floating btn-large waves-effect waves-light red z-depth-3"
+  style="position: fixed; bottom: 25px; right: 25px"
+  title="ajouter un pokemon"
+  routerLink="/pokemon/add"
+>
+  <i class="material-icons">add</i>
+</a>

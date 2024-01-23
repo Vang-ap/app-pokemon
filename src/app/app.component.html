@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application de pokemon</title>
+  </head>
+  <header>
+    <!-- <nav>
+      <div class="header-content">
+        <a href="#" class="header-title"> Pokédex </a>
+      </div>
+    </nav> -->
+
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/home" class="brand-logo"
+          ><img class="logo" src="/assets/2-2.png" alt="logo pokedex"
+        /></a>
+        <a href="/login" class="link-login">connexion</a>
+        <!-- <a (click)="logout()">Se déconnecter</a> -->
+        <!-- <div class="app-login">
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/login">connexion</a></li>
+          </ul>
+        </div> -->
+      </div>
+    </nav>
+  </header>
+  <body>
+    <router-outlet></router-outlet>
+  </body>
+
+  <footer class="page-footer">
+    <div class="container-footer-infos row">
+      <div class="container-pokedex-infos">
+        <div class="container-link">
+          <h5 class="white-text">Pokedex</h5>
+          <p class="white-text text-lighten-4">
+            Application faite en Angular et TypeScript, suite a une formation
+            sur <a href="https://www.udemy.com/" target="_blank">Udemey</a>
+          </p>
+          <a
+            href="https://www.udemy.com/course/angular-developper-tutoriel-application-typescript/"
+            target="_blank"
+            >Fomation Angular du formateur Simon DIENY</a
+          >
+        </div>
+
+        <div class="container-notion">
+          <div>
+            <ul>
+              <h5>Notions apprises</h5>
+              <li>
+                <p>
+                  Créer une application Angular complète à partir d'un dossier
+                  vide
+                </p>
+              </li>
+              <li>
+                <p>
+                  Ajouter des formulaires pilotés par le template et par le
+                  modèle
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <ul>
+              <li><p>Mettre en place un système d'authentification</p></li>
+              <li>
+                <p>Développer un système de navigation entre composants</p>
+              </li>
+              <li>
+                <p>Effectuer des requêtes HTTP depuis son application</p>
+              </li>
+              <li><p>Déployer une application Angular en production</p></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container-univer-pokemon">
+          <h5 class="white-text">L'univers Pokémon</h5>
+          <ul>
+            <li>
+              <a
+                class="white-text text-lighten-3"
+                href="https://fr.wikipedia.org/wiki/Pok%C3%A9mon"
+                target="_blank"
+              >
+                Comprendre l'histoire de Pokémon
+              </a>
+            </li>
+            <li>
+              <a
+                class="white-text text-lighten-3"
+                href="https://fr.wikipedia.org/wiki/Pok%C3%A9mon,_la_s%C3%A9rie"
+                target="_blank"
+              >
+                L'histoire de la série pokémon
+              </a>
+            </li>
+            <li>
+              <a
+                class="white-text text-lighten-3"
+                href="https://www.youtube.com/watch?v=NBElzosmpYI"
+                target="_blank"
+              >
+                Voir un extrait de la série animée Pokémon
+              </a>
+            </li>
+            <li>
+              <a
+                class="white-text text-lighten-3"
+                href="https://assets.pokemon.com/assets/cms2-fr-fr/pdf/trading-card-game/rulebook/sm5_rulebook_fr.pdf"
+                target="_blank"
+              >
+                Règles du jeux de carte Pokémon
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        © 2014 Copyright Text
+        <a class="text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer>
+</html>
