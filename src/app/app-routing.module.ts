@@ -11,13 +11,12 @@ const routes: Routes = [
   //   pathMatch: "full",
   // },
   {
-    path: "home",
+    path: "",
     component: HomeComponent,
   },
   {
     path: "login",
     component: LoginComponent,
-
   },
   {
     path: "**",

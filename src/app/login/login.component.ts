@@ -43,8 +43,9 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  logout() {
-    this.authService.logout();
-    this.message = 'Vous êtes déconnecté';
-  }
+  // logout() {
+  //   this.authService.logout();
+  //   this.message = 'Vous êtes déconnecté';
+  //   this.router.navigate(['/']);
+  // }
 }

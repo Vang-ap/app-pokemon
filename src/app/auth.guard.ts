@@ -16,10 +16,22 @@ export class AuthGuard implements CanActivate {
 
   canActivate(): boolean {
     console.log("Le gurad à bien été appelé !!");
+    console.log('canActivate', this.authService.isLoggedIn);
+
     if (this.authService.isLoggedIn) {
       return true;
     }
     this.router.navigate(["/login"]);
+    return false;
+  }
+
+  canDeactivate() {
+    console.log('canDeactivate', this.authService.isLoggedIn);
+    if (this.authService.isLoggedIn) {
+      return false;
+    }
+
+    this.router.navigate(["/"]);
     return false;
   }
 }

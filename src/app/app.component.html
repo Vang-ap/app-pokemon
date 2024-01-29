@@ -14,16 +14,23 @@
 
     <nav>
       <div class="nav-wrapper">
-        <a href="/home" class="brand-logo"
-          ><img class="logo" src="/assets/2-2.png" alt="logo pokedex"
-        /></a>
-        <a href="/login" class="link-login">connexion</a>
-        <!-- <a (click)="logout()">Se déconnecter</a> -->
-        <!-- <div class="app-login">
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/login">connexion</a></li>
-          </ul>
-        </div> -->
+        <!-- <a href="{{ displaylinkHome }}" class="brand-logo">
+          <img class="logo" src="/assets/2-2.png" alt="logo pokedex" />
+        </a> -->
+
+        <a
+          [routerLink]="disable ? null : ['/']"
+          [ngClass]="{ 'anchor-disable': disable }"
+          class="brand-logo"
+        >
+          <img class="logo" src="/assets/2-2.png" alt="logo pokedex" />
+        </a>
+
+        <a *ngIf="displayButtonLogin" (click)="login()" class="link-login">
+          connexion
+        </a>
+
+        <a *ngIf="displayButtonLogout" (click)="logout()">Se déconnecter</a>
       </div>
     </nav>
   </header>
