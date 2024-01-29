@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-loader',
-  template: `
+    selector: 'app-loader',
+    template: `
     <div class="progress">
     <div class="indeterminate"></div>
     </div>
@@ -19,7 +19,7 @@ import { Component } from '@angular/core';
     </div>
   </div> -->
 `,
-  styles: [
-  ]
+    styles: [],
+    standalone: true
 })
 export class LoaderComponent { }

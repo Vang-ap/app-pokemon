@@ -16,23 +16,21 @@ import { HomeComponent } from './home/home.component';
 registerLocaleData(localeFr);
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PageNotFoundComponent,
-    LoginComponent,
-    HomeComponent,
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
-    PokemonModule,
-    AppRoutingModule,
-  ],
-  providers: [DatePipe,
-    { provide: LOCALE_ID, useValue: 'fr-FR' }
-  ],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpClientModule,
+        HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
+        PokemonModule,
+        AppRoutingModule,
+        PageNotFoundComponent,
+        LoginComponent,
+        HomeComponent
+    ],
+    providers: [DatePipe,
+        { provide: LOCALE_ID, useValue: 'fr-FR' }
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
