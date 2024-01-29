@@ -1,12 +1,15 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivationEnd, NavigationEnd, Router } from '@angular/router';
+import { ActivationEnd, NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 
 import { AuthService } from './auth.service';
+import { NgClass, NgIf } from "@angular/common";
 // import { filter } from 'rxjs';
 
 @Component({
-  selector: "app-root",
-  templateUrl: './app.component.html'
+    selector: "app-root",
+    templateUrl: './app.component.html',
+    standalone: true,
+    imports: [RouterLink, NgClass, NgIf, RouterOutlet]
 })
 export class AppComponent implements OnInit {
   displayButtonLogin: boolean;
