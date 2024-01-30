@@ -26,10 +26,12 @@ const routes: Routes = [
     },
     {
         path: "login",
+        title: "Connexion",
         loadComponent: () => import("./app/login/login.component").then((module) => module.LoginComponent),
     },
     {
         path: "**",
+        title: "Page non trouver",
         loadComponent: () => import("./app/page-not-found/page-not-found.component").then((module) => module.PageNotFoundComponent),
     },
 ];

@@ -5,12 +5,13 @@ import { PokemonService } from '../pokemon.service';
 import { PokemonTypeColorPipe } from '../pokemon-type-color.pipe';
 import { LoaderComponent } from '../loader/loader.component';
 import { NgIf, NgFor, DatePipe } from '@angular/common';
+import { Title } from '@angular/platform-browser';
 
 @Component({
-    selector: 'app-detail-pokemon',
-    templateUrl: './detail-pokemon.component.html',
-    standalone: true,
-    imports: [NgIf, NgFor, LoaderComponent, DatePipe, PokemonTypeColorPipe]
+  selector: 'app-detail-pokemon',
+  templateUrl: './detail-pokemon.component.html',
+  standalone: true,
+  imports: [NgIf, NgFor, LoaderComponent, DatePipe, PokemonTypeColorPipe]
 })
 export class DetailPokemonComponent implements OnInit {
   pokemonList: Pokemon[];
@@ -20,6 +21,7 @@ export class DetailPokemonComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private pokemonService: PokemonService,
+    private title: Title,
   ) { }
 
   ngOnInit() {
@@ -30,13 +32,24 @@ export class DetailPokemonComponent implements OnInit {
         .getPokemonById(+pokemonId)
         .subscribe((pokemon) => {
           console.log('pokemon', pokemon);
-          this.pokemon = pokemon
+          this.pokemon = pokemon;
+          this.initTitle(pokemon);
         });
 
 
       // this.pokemon = this.pokemonList.find(pokemon => pokemon.id === +pokemonId)
     }
 
+  }
+
+  initTitle(pokemon: Pokemon | undefined) {
+    if (!pokemon) {
+      this.title.setTitle('Pokemon not found');
+
+      return;
+    }
+
+    this.title.setTitle(pokemon.name);
   }
 
   deletePokemon(pokemon: Pokemon) {
